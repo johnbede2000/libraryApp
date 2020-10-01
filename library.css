@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    /* scroll-behavior: smooth; */
+}
+
+image {
+    display: block;
+    max-width: 100%;
+}
+
+/* :root {
+    list my variables here
+} */
+
+/* body {  
+    font-family: ;
+} /*
