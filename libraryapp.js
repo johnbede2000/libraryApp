@@ -13,14 +13,14 @@
 //   }
 // ];
 
-// function book(title, author, pages, status) {
+// function Book(title, author, pages, status) {
 //   this.title = title
 //   this.author = author
 //   this.pages = pages
 //   this.status = status
 // }
 
-// book.prototype.info = () => `${title} by ${author}, ${pages} pages, ${status}.`;
+// Book.prototype.info = () => `${title} by ${author}, ${pages} pages, ${status}.`;
 
 // function addBookToLibrary() {
   //  take user’s input and store the new book object into the array myLibrary
