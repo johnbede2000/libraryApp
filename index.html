@@ -11,32 +11,40 @@
     <meta name="author" content="www.johnbe.de">
     <script src="https://kit.fontawesome.com/10e8632cd5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-<a href="../"><i class="fas fa-arrow-left"></i> Home</a>    
-<h1>Library App</h1>
-<button type='button' id='add'><i class="fas fa-plus"></i> Add a book</button>
-<div id='input' class='hidden'>
-    <form>
-        <label for='title'>Title</label>
-        <input id='title' type='text'></input>
-        <label for='author'>Author</label>
-        <input type='text' id='author'></input>
-        <label for='pages'>Number of pages</label>
-        <input id='pages' type='number'></input>
-        <label for='status'>Finished?</label>
-        <input type='checkbox' id='status'></input>
-        <button type='button' id='hello'>X</button>
-    </form>
-</div>
-<!-- display of books -->
-<div class='grid'>
-    <div class='book finished'>
-        <p class='title'>The Jazz Piano Book</p>
-        <p class='author'>Mark Levine</p>
-        <p class='pages'>222 pages</p>
-        <p class='status'>Finished</p>
+    <a href="../"><i class="fas fa-arrow-left"></i> Home</a>
+    <h1>Library App</h1>
+    <button type='button' id='add'><i class="fas fa-plus"></i> Add a book</button>
+    <div id='input' class='hidden'>
+        <form>
+            <label for='title'>Title</label>
+            <input id='title' type='text'></input>
+            <label for='author'>Author</label>
+            <input type='text' id='author'></input>
+            <label for='pages'>Number of pages</label>
+            <input id='pages' type='number'></input>
+            <label for='status'>Finished?</label>
+            <input type='checkbox' id='status'></input>
+            <div>
+                <button class='highlighted' type='button' id='add-book'>Add New Book</button>
+                <button class='shaded' type='button' id='close-form'>Cancel</button>
+            </div>
+        </form>
     </div>
-</div>
-<!-- Add a “NEW BOOK” button that brings up a form allowing users to input the details for the new book: author, title, number of pages, whether it’s been read and anything else you might want. -->
-<script src="libraryapp.js"></script>
+    <!-- display of books -->
+    <div class='grid'>
+        <div class='book finished'>
+            <p class='title'>The Jazz Piano Book</p>
+            <p>by <span class='author'>Mark Levine</span></p>
+            <p class='pages'>222 pages</p>
+            <button type='button' class='status'>Mark as unread</button>
+            <div>
+                <button type='button'><i class="fas fa-edit"></i></button>
+                <button type='button'><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="libraryapp.js"></script>
 </body>
