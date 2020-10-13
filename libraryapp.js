@@ -2,31 +2,35 @@ let myLibrary = [
   {
     title: 'The Jazz Piano Book',
     author: 'Mark Levine',
-    pages: 222,
-    status: 'finished',
+    status: true,
   },
   {
     title: 'The Jazz Theory Book',
     author: 'Mark Levine',
-    pages: 322,
-    status: 'finished'
+    status: true,
   }
 ];
 
-function Book(title, author, pages, status) {
+function Book(title, author, status, notes) {
   this.title = title
   this.author = author
-  this.pages = pages
   this.status = status
+  this.notes = notes
 }
 
 function addBookToLibrary() {
-  // take user’s input and store the new book object into the array myLibrary: currently working on no.2
+  // take user’s input and store the new book object into the array myLibrary
   let title = document.getElementById("title").value;
   let author = document.getElementById('author').value;
-  let pages = document.getElementById('pages').value;
+  let status = document.getElementById('status').checked;
   
-  let newObj = Book(title, author, pages, status);
+  let newObj = new Book(title, author, pages, status);
+  myLibrary.push(newObj);
+  //put code to create the DOM object and add it to the library display
+
+  closeForm();
+
+
 }
 
 function displayMyLibrary() {
@@ -41,5 +45,14 @@ function toggleHidden() {
   document.querySelector('#add').classList.toggle('hidden');
 }
 
-document.querySelector('#close-form').addEventListener('click', toggleHidden);
+function closeForm() {
+  toggleHidden();
+  document.getElementById("title").value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('notes').value = '';
+  document.getElementById('status').checked = false;
+}
+
+document.querySelector('#close-form').addEventListener('click', closeForm);
 document.querySelector('#add').addEventListener('click', toggleHidden);
+document.querySelector('#add-book').addEventListener('click', addBookToLibrary);

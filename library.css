@@ -27,9 +27,50 @@ body {
     background-color: rgb(250, 250, 250);
 }
 
-.grid {
-    display: grid;
+.row {
+    vertical-align: middle;
+    border-top: gray solid 1px;
 }
+
+.title-author {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.title {
+    display: block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.author {
+    display: block;
+    vertical-align: middle;
+}
+
+.display-row-status {
+    width: 50px;
+    display: none; /* inline-block for wider screens */
+    vertical-align: middle;
+}
+
+.true {
+    background-color: lightgreen;
+}
+
+.edit-icon {
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.delete-icon {
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 
 .book {
     display: flex;
@@ -57,7 +98,7 @@ body {
     align-items: center;
 }
 
-.input {
+#input {
     position: fixed;
     z-index: 10;
     top: 3rem;
@@ -67,9 +108,6 @@ body {
     border: solid 1px black;
     border-radius: 5px;
     background-color: white;
-}
-
-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,4 +129,18 @@ form {
 
 .highlighted {
     background-color: whitesmoke;
+}
+
+.less {
+    font-weight: 400;
+    font-size: 0.75em;
+}
+
+.flex {
+    display: flex;
+}
+
+.buttons {
+    justify-content: space-between;
+    width: 85%;
 }

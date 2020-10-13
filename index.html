@@ -16,24 +16,22 @@
     <a href="../"><i class="fas fa-arrow-left"></i> Home</a>
     <h1>Library App</h1>
     <button type='button' id='add'><i class="fas fa-plus"></i> Add a book</button>
-    <div id='input' class='hidden'>
-        <form>
-            <label for='title'>Title</label>
-            <input id='title' type='text'></input>
-            <label for='author'>Author</label>
-            <input type='text' id='author'></input>
-            <label for='pages'>Number of pages</label>
-            <input id='pages' type='number'></input>
-            <label for='status'>Finished?</label>
-            <input type='checkbox' id='status'></input>
-            <div>
-                <button class='highlighted' type='button' id='add-book'>Add New Book</button>
-                <button class='shaded' type='button' id='close-form'>Cancel</button>
-            </div>
-        </form>
-    </div>
-    <!-- display of books -->
-    <div class='grid'>
+    <form id='input' class='hidden'>
+        <label for='title'>Title
+        <input id='title' type='text'></input></label>
+        <label for='author'>Author
+        <input type='text' id='author'></input></label>
+        <label for='status'>Finished?
+        <input type='checkbox' id='status'></input></label>
+        <label for='notes'>Notes <span class='less'>(optional)</span>
+        <textarea rows='4' maxlength="200" id='notes'></textarea></label>
+        <div class='flex buttons'>
+            <button class='highlighted' type='button' id='add-book'>Add New Book</button>
+            <button class='shaded' type='button' id='close-form'>Cancel</button>
+        </div>
+    </form>
+    <!-- display of books: change to a table, as cards are impractical for a large library!-->
+    <!-- <div class='grid'>
         <div class='book finished'>
             <p class='title'>The Jazz Piano Book</p>
             <p>by <span class='author'>Mark Levine</span></p>
@@ -44,7 +42,27 @@
                 <button type='button'><i class="fas fa-trash"></i></button>
             </div>
         </div>
-    </div>
+    </div> -->
 
+    <div id='library-display'>
+        <div class='row true'>
+            <div class='title-author'>
+                <div class='title'>The Jazz Theory Book</div>
+                <div class='author'>Mark Levine</div>
+            </div>
+            <div class='display-row-status'>Finished</div>
+            <div class='edit-icon'>Icon</div>
+            <div class='delete-icon'>Icon</div>
+        </div>
+        <div class='row'>
+            <div class='title-author'>
+                <div class='title'>How To Improvise</div>
+                <div class='author'>Charlie Parker</div>
+            </div>
+            <div class='display-row-status'>Finished</div>
+            <div class='edit-icon'>Icon</div>
+            <div class='delete-icon'>Icon</div>
+        </div>
+    </div>
     <script src="libraryapp.js"></script>
 </body>
