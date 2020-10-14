@@ -27,12 +27,20 @@ function addBookToLibrary() {
   
   let newObj = new Book(title, author, status, notes);
   myLibrary.push(newObj);
-  //update code (or call function) to create the DOM object and add it to the library display
+  displayMyLibrary();
   closeForm();
 }
 
+function clearTable() {
+  let rows = document.getElementsByClassName('row');
+  while (rows.length > 0) {
+    document.getElementById('library-display').removeChild(rows[0]);
+  }
+}
+
 function displayMyLibrary() {
-  // 3. loops through the array and displays each book on the page
+  // loops through the array and displays each book on the page
+  clearTable();
   for (let i=0; i<myLibrary.length; i++) {
     let row = document.createElement('div');
     row.classList.add('row');
@@ -55,6 +63,14 @@ function displayMyLibrary() {
     auth.classList.add('author');
     auth.textContent = myLibrary[i].author;
     titleAuthor.appendChild(auth);
+
+    let edit = document.createElement('div');
+    edit.classList.add('edit-icon');
+    row.appendChild(edit);
+
+    let del = document.createElement('div');
+    del.classList.add('delete-icon');
+    row.appendChild(del);
 
     document.querySelector('#library-display').appendChild(row);
   }

@@ -54,11 +54,19 @@ body {
 .edit-icon {
     display: block;
     flex-basis: 20%;
+    height: 50px;
+    background-image: url(images/edit.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .delete-icon {
     display: block;
     flex-basis: 20%;
+    height: 50px;
+    background-image: url(images/delete.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .icon {
