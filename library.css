@@ -27,6 +27,10 @@ body {
     background-color: rgb(250, 250, 250);
 }
 
+#library-display {
+    border-bottom: gray solid 1px;
+}
+
 .row {
     vertical-align: middle;
     display: flex;
@@ -45,6 +49,11 @@ body {
 
 .title {
     font-weight: bold;
+    /* display side by side on wider screens */
+}
+
+.author {
+    /* display side by side on wider screens */
 }
 
 .display-row-status {

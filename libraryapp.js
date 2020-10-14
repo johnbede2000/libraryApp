@@ -44,6 +44,7 @@ function displayMyLibrary() {
   for (let i=0; i<myLibrary.length; i++) {
     let row = document.createElement('div');
     row.classList.add('row');
+    row.setAttribute('id', i);
     if (myLibrary[i].status) {
       row.classList.add('true');
     } else {
