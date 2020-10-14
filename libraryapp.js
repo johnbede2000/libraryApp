@@ -1,14 +1,10 @@
 let myLibrary = [
   {
-    title: 'The Jazz Piano Book',
-    author: 'Mark Levine',
+    title: 'Example Book',
+    author: 'A Wrighter',
     status: true,
   },
-  {
-    title: 'The Jazz Theory Book (This Is a Long Title)',
-    author: 'Mark Levine',
-    status: true,
-  }
+
 ];
 
 function Book(title, author, status, notes) {
@@ -65,7 +61,7 @@ function displayMyLibrary() {
 
         let auth = document.createElement('div');
         auth.classList.add('author');
-        auth.textContent = myLibrary[i].author;
+        auth.textContent = 'by ' + myLibrary[i].author;
         titleAuthor.appendChild(auth);
 
         let edit = document.createElement('div');
@@ -78,11 +74,19 @@ function displayMyLibrary() {
 
         document.querySelector('#library-display').appendChild(row);
       };
-      const allRows = document.querySelectorAll('.row');
-      allRows.forEach((row) => row.addEventListener('click', deleteBook));
+      const allDeleteBtns = document.querySelectorAll('.delete-icon');
+      allDeleteBtns.forEach((btn) => btn.addEventListener('click', deleteAlert));
+
+      const allEditBtns = document.querySelectorAll('.edit-icon');
+      allEditBtns.forEach((btn) => btn.addEventListener('click', editBook));
     } 
 }
 displayMyLibrary();
+
+function editBook() {
+  /* create a form html element with all the same classes and id's as the 'add book' form, with current details already displayed.
+  Clicking a confirm button updates all the properties of the array index; pressing cancel removes the parent element without altering the array. */
+}
 
 function toggleHidden() {
   document.querySelector('#input').classList.toggle('hidden');
@@ -95,6 +99,12 @@ function closeForm() {
   document.getElementById('author').value = '';
   document.getElementById('notes').value = '';
   document.getElementById('status').checked = false;
+}
+
+function deleteAlert(e) {
+  if(confirm('Are you sure want to delete this book?')) {
+    deleteBook(e);
+  } else {return;}
 }
 
 function deleteBook(e) {
