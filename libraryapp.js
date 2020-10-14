@@ -91,6 +91,15 @@ function closeForm() {
   document.getElementById('status').checked = false;
 }
 
+function deleteBook(e) {
+  let arrayIndex = e.target.getAttribute('id');
+  myLibrary.splice(arrayIndex, 1);
+  displayMyLibrary();
+}
+
 document.querySelector('#close-form').addEventListener('click', closeForm);
 document.querySelector('#add').addEventListener('click', toggleHidden);
 document.querySelector('#add-book').addEventListener('click', addBookToLibrary);
+
+const allRows = document.querySelectorAll('.row');
+allRows.forEach((row) => row.addEventListener('click', deleteBook))
