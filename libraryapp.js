@@ -41,40 +41,46 @@ function clearTable() {
 function displayMyLibrary() {
   // loops through the array and displays each book on the page
   clearTable();
-  for (let i=0; i<myLibrary.length; i++) {
-    let row = document.createElement('div');
-    row.classList.add('row');
-    row.setAttribute('id', i);
-    if (myLibrary[i].status) {
-      row.classList.add('true');
-    } else {
-      row.classList.add('false');
-    };
+  if (myLibrary.length <= 0) {
+    return;
+  } else {
+      for (let i=0; i<myLibrary.length; i++) {
+        let row = document.createElement('div');
+        row.classList.add('row');
+        row.setAttribute('id', i);
+        if (myLibrary[i].status) {
+          row.classList.add('true');
+        } else {
+          row.classList.add('false');
+        };
 
-    let titleAuthor = document.createElement('div');
-    titleAuthor.classList.add('title-author');
-    row.appendChild(titleAuthor);
+        let titleAuthor = document.createElement('div');
+        titleAuthor.classList.add('title-author');
+        row.appendChild(titleAuthor);
 
-    let tit = document.createElement('div');
-    tit.classList.add('title');
-    tit.textContent = myLibrary[i].title;
-    titleAuthor.appendChild(tit);
+        let tit = document.createElement('div');
+        tit.classList.add('title');
+        tit.textContent = myLibrary[i].title;
+        titleAuthor.appendChild(tit);
 
-    let auth = document.createElement('div');
-    auth.classList.add('author');
-    auth.textContent = myLibrary[i].author;
-    titleAuthor.appendChild(auth);
+        let auth = document.createElement('div');
+        auth.classList.add('author');
+        auth.textContent = myLibrary[i].author;
+        titleAuthor.appendChild(auth);
 
-    let edit = document.createElement('div');
-    edit.classList.add('edit-icon');
-    row.appendChild(edit);
+        let edit = document.createElement('div');
+        edit.classList.add('edit-icon');
+        row.appendChild(edit);
 
-    let del = document.createElement('div');
-    del.classList.add('delete-icon');
-    row.appendChild(del);
+        let del = document.createElement('div');
+        del.classList.add('delete-icon');
+        row.appendChild(del);
 
-    document.querySelector('#library-display').appendChild(row);
-  }
+        document.querySelector('#library-display').appendChild(row);
+      };
+      const allRows = document.querySelectorAll('.row');
+      allRows.forEach((row) => row.addEventListener('click', deleteBook));
+    } 
 }
 displayMyLibrary();
 
@@ -92,7 +98,7 @@ function closeForm() {
 }
 
 function deleteBook(e) {
-  let arrayIndex = e.target.getAttribute('id');
+  let arrayIndex = e.target.parentNode.getAttribute('id');
   myLibrary.splice(arrayIndex, 1);
   displayMyLibrary();
 }
@@ -100,6 +106,3 @@ function deleteBook(e) {
 document.querySelector('#close-form').addEventListener('click', closeForm);
 document.querySelector('#add').addEventListener('click', toggleHidden);
 document.querySelector('#add-book').addEventListener('click', addBookToLibrary);
-
-const allRows = document.querySelectorAll('.row');
-allRows.forEach((row) => row.addEventListener('click', deleteBook))
