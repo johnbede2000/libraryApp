@@ -29,48 +29,42 @@ body {
 
 .row {
     vertical-align: middle;
+    display: flex;
+    align-items: center;
     border-top: gray solid 1px;
-}
-
-.title-author {
-    display: inline-block;
-    width: 50%;
-    vertical-align: middle;
-}
-
-.title {
-    display: block;
-    vertical-align: middle;
-    font-weight: bold;
-}
-
-.author {
-    display: block;
-    vertical-align: middle;
-}
-
-.display-row-status {
-    width: 50px;
-    display: none; /* inline-block for wider screens */
-    vertical-align: middle;
 }
 
 .true {
     background-color: lightgreen;
 }
 
+.title-author {
+    display: block;
+    flex-basis: 60%;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.display-row-status {
+    display: none; /* inline-block for wider screens */
+}
+
 .edit-icon {
-    width: 50px;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    flex-basis: 20%;
 }
 
 .delete-icon {
-    width: 50px;
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    flex-basis: 20%;
 }
 
+.icon {
+    height: 50px;
+    width: auto;
+}
 
 .book {
     display: flex;

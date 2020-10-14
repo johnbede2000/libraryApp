@@ -30,39 +30,27 @@
             <button class='shaded' type='button' id='close-form'>Cancel</button>
         </div>
     </form>
-    <!-- display of books: change to a table, as cards are impractical for a large library!-->
-    <!-- <div class='grid'>
-        <div class='book finished'>
-            <p class='title'>The Jazz Piano Book</p>
-            <p>by <span class='author'>Mark Levine</span></p>
-            <p class='pages'>222 pages</p>
-            <button type='button' class='status'>Mark as unread</button>
-            <div>
-                <button type='button'><i class="fas fa-edit"></i></button>
-                <button type='button'><i class="fas fa-trash"></i></button>
-            </div>
-        </div>
-    </div> -->
 
     <div id='library-display'>
-        <div class='row true'>
+        <div class='row true'> <!-- flex container-->
             <div class='title-author'>
                 <div class='title'>The Jazz Theory Book</div>
                 <div class='author'>Mark Levine</div>
             </div>
             <div class='display-row-status'>Finished</div>
-            <div class='edit-icon'>Icon</div>
-            <div class='delete-icon'>Icon</div>
+            <div class='edit-icon'><img class='icon' src='images/edit.svg'></div>
+            <div class='delete-icon'><img class='icon' src='images/delete.svg'></div>
         </div>
-        <div class='row'>
-            <div class='title-author'>
-                <div class='title'>How To Improvise</div>
-                <div class='author'>Charlie Parker</div>
+
+        <div id='library-display'>
+            <div class='row true'> <!-- flex container-->
+                <div class='title-author'>
+                    <div class='title'>The Jazz Theory Book (This Is a Long Title)</div>
+                    <div class='author'>Mark Levine</div>
+                </div>
+                <div class='display-row-status'>Finished</div>
+                <div class='edit-icon'><img class='icon' src='images/edit.svg'></div>
+                <div class='delete-icon'><img class='icon' src='images/delete.svg'></div>
             </div>
-            <div class='display-row-status'>Finished</div>
-            <div class='edit-icon'>Icon</div>
-            <div class='delete-icon'>Icon</div>
-        </div>
-    </div>
     <script src="libraryapp.js"></script>
 </body>

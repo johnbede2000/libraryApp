@@ -5,7 +5,7 @@ let myLibrary = [
     status: true,
   },
   {
-    title: 'The Jazz Theory Book',
+    title: 'The Jazz Theory Book (This Is a Long Title',
     author: 'Mark Levine',
     status: true,
   }
@@ -23,22 +23,21 @@ function addBookToLibrary() {
   let title = document.getElementById("title").value;
   let author = document.getElementById('author').value;
   let status = document.getElementById('status').checked;
+  let notes = document.getElementById('notes').value;
   
-  let newObj = new Book(title, author, pages, status);
+  let newObj = new Book(title, author, status, notes);
   myLibrary.push(newObj);
-  //put code to create the DOM object and add it to the library display
-
+  //put code or call function to create the DOM object and add it to the library display
   closeForm();
-
-
 }
 
 function displayMyLibrary() {
-  // 3. loops through the array and displays each book on the page. You can display them in some sort of table, or each on their own “card”
+  // 3. loops through the array and displays each book on the page
   for (let i=0; i<myLibrary.length; i++) {
     document.createElement(div);
   }
 }
+displayMyLibrary();
 
 function toggleHidden() {
   document.querySelector('#input').classList.toggle('hidden');
