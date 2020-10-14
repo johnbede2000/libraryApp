@@ -5,7 +5,7 @@ let myLibrary = [
     status: true,
   },
   {
-    title: 'The Jazz Theory Book (This Is a Long Title',
+    title: 'The Jazz Theory Book (This Is a Long Title)',
     author: 'Mark Levine',
     status: true,
   }
@@ -27,14 +27,36 @@ function addBookToLibrary() {
   
   let newObj = new Book(title, author, status, notes);
   myLibrary.push(newObj);
-  //put code or call function to create the DOM object and add it to the library display
+  //update code (or call function) to create the DOM object and add it to the library display
   closeForm();
 }
 
 function displayMyLibrary() {
   // 3. loops through the array and displays each book on the page
   for (let i=0; i<myLibrary.length; i++) {
-    document.createElement(div);
+    let row = document.createElement('div');
+    row.classList.add('row');
+    if (myLibrary[i].status) {
+      row.classList.add('true');
+    } else {
+      row.classList.add('false');
+    };
+
+    let titleAuthor = document.createElement('div');
+    titleAuthor.classList.add('title-author');
+    row.appendChild(titleAuthor);
+
+    let tit = document.createElement('div');
+    tit.classList.add('title');
+    tit.textContent = myLibrary[i].title;
+    titleAuthor.appendChild(tit);
+
+    let auth = document.createElement('div');
+    auth.classList.add('author');
+    auth.textContent = myLibrary[i].author;
+    titleAuthor.appendChild(auth);
+
+    document.querySelector('#library-display').appendChild(row);
   }
 }
 displayMyLibrary();
