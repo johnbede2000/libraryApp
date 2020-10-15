@@ -16,7 +16,8 @@
     <a href="../"><i class="fas fa-arrow-left"></i> Home</a>
     <h1>Library App</h1>
     <button type='button' id='add'><i class="fas fa-plus"></i> Add a book</button>
-    <form id='input' class='hidden'>
+    
+    <form id='input' class='popup hidden'>
         <label for='title'>Title
         <input id='title' type='text'></input></label>
         <label for='author'>Author
@@ -26,8 +27,23 @@
         <label for='notes'>Notes <span class='less'>(optional)</span>
         <textarea rows='4' maxlength="200" id='notes'></textarea></label>
         <div class='flex buttons'>
-            <button class='highlighted' type='button' id='add-book'>Add New Book</button>
-            <button class='shaded' type='button' id='close-form'>Cancel</button>
+            <button class='highlighted popup-btn' type='button' id='add-book'>Add New Book</button>
+            <button class='shaded popup-btn' type='button' id='close-form'>Cancel</button>
+        </div>
+    </form>
+
+    <form id='edit-form' class='popup hidden'>
+        <label for='edit-title'>Title
+        <input id='edit-title' type='text'></input></label>
+        <label for='edit-author'>Author
+        <input type='text' id='edit-author'></input></label>
+        <label for='edit-status'>Finished?
+        <input type='checkbox' id='edit-status'></input></label>
+        <label for='edit-notes'>Notes <span class='less'>(optional)</span>
+        <textarea rows='4' maxlength="200" id='edit-notes'></textarea></label>
+        <div class='flex buttons'>
+            <button class='highlighted' type='button' id='confirm-edit'>Confirm changes</button>
+            <button class='shaded popup-btn' type='button' id='cancel-edit'>Cancel changes</button>
         </div>
     </form>
 
