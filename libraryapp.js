@@ -20,7 +20,7 @@ function addBookToLibrary() {
   let author = document.getElementById('author').value;
   let status = document.getElementById('status').checked;
   let notes = document.getElementById('notes').value;
-  
+
   let newObj = new Book(title, author, status, notes);
   myLibrary.push(newObj);
   displayMyLibrary();
@@ -40,52 +40,53 @@ function displayMyLibrary() {
   if (myLibrary.length <= 0) {
     return;
   } else {
-      for (let i=0; i<myLibrary.length; i++) {
-        let row = document.createElement('div');
-        row.classList.add('row');
-        row.setAttribute('id', i);
-        if (myLibrary[i].status) {
-          row.classList.add('true');
-        } else {
-          row.classList.add('false');
-        };
-
-        let titleAuthor = document.createElement('div');
-        titleAuthor.classList.add('title-author');
-        row.appendChild(titleAuthor);
-
-        let tit = document.createElement('div');
-        tit.classList.add('title');
-        tit.textContent = myLibrary[i].title;
-        titleAuthor.appendChild(tit);
-
-        let auth = document.createElement('div');
-        auth.classList.add('author');
-        auth.textContent = 'by ' + myLibrary[i].author;
-        titleAuthor.appendChild(auth);
-
-        let edit = document.createElement('div');
-        edit.classList.add('edit-icon');
-        row.appendChild(edit);
-
-        let del = document.createElement('div');
-        del.classList.add('delete-icon');
-        row.appendChild(del);
-
-        document.querySelector('#library-display').appendChild(row);
+    for (let i = 0; i < myLibrary.length; i++) {
+      let row = document.createElement('div');
+      row.classList.add('row');
+      row.setAttribute('id', i);
+      if (myLibrary[i].status) {
+        row.classList.add('true');
+      } else {
+        row.classList.add('false');
       };
-      const allDeleteBtns = document.querySelectorAll('.delete-icon');
-      allDeleteBtns.forEach((btn) => btn.addEventListener('click', deleteAlert));
 
-      const allEditBtns = document.querySelectorAll('.edit-icon');
-      allEditBtns.forEach((btn) => btn.addEventListener('click', editBook));
-    } 
+      let titleAuthor = document.createElement('div');
+      titleAuthor.classList.add('title-author');
+      row.appendChild(titleAuthor);
+
+      let tit = document.createElement('div');
+      tit.classList.add('title');
+      tit.textContent = myLibrary[i].title;
+      titleAuthor.appendChild(tit);
+
+      let auth = document.createElement('div');
+      auth.classList.add('author');
+      auth.textContent = 'by ' + myLibrary[i].author;
+      titleAuthor.appendChild(auth);
+
+      let edit = document.createElement('div');
+      edit.classList.add('edit-icon');
+      row.appendChild(edit);
+
+      let del = document.createElement('div');
+      del.classList.add('delete-icon');
+      row.appendChild(del);
+
+      document.querySelector('#library-display').appendChild(row);
+    };
+
+    const allDeleteBtns = document.querySelectorAll('.delete-icon');
+    allDeleteBtns.forEach((btn) => btn.addEventListener('click', deleteAlert));
+
+    const allEditBtns = document.querySelectorAll('.edit-icon');
+    allEditBtns.forEach((btn) => btn.addEventListener('click', editBook));
+  }
 }
 displayMyLibrary();
 
 function editBook() {
-  /* create a form html element with all the same classes and id's as the 'add book' form, with current details already displayed.
-  Clicking a confirm button updates all the properties of the array index; pressing cancel removes the parent element without altering the array. */
+  /* 1) make the form not hidden 2) with current details already displayed
+  3) Clicking a confirm button updates all the properties of the array index and removes the uppermost element; 4) pressing cancel removes the parent element without altering the array. */
 }
 
 function toggleHidden() {
@@ -102,9 +103,9 @@ function closeForm() {
 }
 
 function deleteAlert(e) {
-  if(confirm('Are you sure want to delete this book?')) {
+  if (confirm('Are you sure want to delete this book?')) {
     deleteBook(e);
-  } else {return;}
+  } else { return; }
 }
 
 function deleteBook(e) {
