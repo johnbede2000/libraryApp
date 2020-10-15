@@ -125,8 +125,7 @@ body {
 }
 
 .hidden {
-    position: relative;
-    visibility: hidden;
+    display: none;
 }
 
 .popup-btn {
