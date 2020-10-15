@@ -109,7 +109,7 @@ body {
     align-items: center;
 }
 
-#input {
+.popup {
     position: fixed;
     z-index: 10;
     top: 3rem;
@@ -129,7 +129,7 @@ body {
     visibility: hidden;
 }
 
-#close {
+.popup-btn {
     cursor: pointer;
     border: 1px solid black;
 }
