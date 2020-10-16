@@ -67,6 +67,7 @@ body {
     background-image: url(images/edit.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .delete-icon {
@@ -76,6 +77,7 @@ body {
     background-image: url(images/delete.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .icon {
@@ -154,3 +156,5 @@ body {
     justify-content: space-between;
     width: 85%;
 }
+
+/* add behaviour for clicking icons */
